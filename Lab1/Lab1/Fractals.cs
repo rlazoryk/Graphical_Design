@@ -29,9 +29,12 @@ namespace Lab1
             Graphics g = Graphics.FromHwnd(Picture.Handle);
             //Вызов функции отрисовки фрактала
             //int mx =1026, my = 428;
-            int mx = Picture.Width, my = Picture.Height;               
-            Complex constant = new Complex(Double.Parse(cRealField.Text), Double.Parse(cImagineField.Text));
-            Draw(mx, my, g, myPen, constant);           
+            int mx = Picture.Width, my = Picture.Height;
+            if (CheckDoubleTextBox(cRealField) && CheckDoubleTextBox(cImagineField))
+            {
+                Complex constant = new Complex(Double.Parse(cRealField.Text), Double.Parse(cImagineField.Text));
+                Draw(mx, my, g, myPen, constant);
+            }
         }        
         public void Draw(int mx1, int my1, Graphics g, Pen pen, Complex c)
         {
@@ -39,11 +42,32 @@ namespace Lab1
 
             mx = mx1 / 2;
             my = my1 / 2;
-
+            // Це я пробував масштаб міняти на основі тої шкали
+            int scale = TrackBar1.Value;
+            double koef = 0.005;
+            MessageBox.Show(koef.ToString());
+            if (scale < 100)
+            {
+                scale = (100 - scale) / 20;
+                for(int i = 0; i < scale; ++i)
+                {
+                    koef *= 0.1;
+                    MessageBox.Show(koef.ToString());
+                }                
+            }
+            else if(scale > 100)
+            {
+                scale /= 100;
+                for (int i = 0; i < scale; ++i)
+                {
+                    koef /= 0.1;
+                }
+            }
+            MessageBox.Show(koef.ToString());
             for (int y = -my; y < my; y++)
                 for (int x = -mx; x < mx; x++)
                 {
-                    n = NewonsMethod(new Complex(x * 0.05, y * 0.05), c, 0.01, Int32.Parse(RankCombobox.SelectedItem.ToString()));
+                    n = NewonsMethod(new Complex(x * koef, y * koef), c, 0.1, Int32.Parse(RankCombobox.SelectedItem.ToString()));
                     pen.Color = FormColor(ColorSchemaCombobox.SelectedItem.ToString(), n);
                     g.DrawRectangle(pen, mx + x, my + y, 1, 1);                    
                 }           
@@ -75,7 +99,8 @@ namespace Lab1
             do
             {
                 oldZ = z;
-                z = (double)(rank - 1) / rank * z + 1.0 / rank * c / Complex.Pow(z, rank - 1);               
+                //z = (double)(rank - 1) / rank * z + 1.0 / rank * c / Complex.Pow(z, rank - 1); 
+                z = 2.0 / 3 * z + 1.0 / 3 * c / (z * z);
                 iter++;
             } while (Complex.Abs(z - oldZ) > eps);
             return iter;
@@ -100,6 +125,24 @@ namespace Lab1
                 (sender as TextBox).Text = "";
             }
         }
-        
+
+        private void TrackBar1_ValueChanged(object sender, EventArgs e)
+        {
+            if(TrackBar1.Value > 100)
+            {
+                if (TrackBar1.Value % 100 != 0)
+                {
+                    TrackBar1.Value = (TrackBar1.Value / 100) * 100;
+                }
+            }
+            else
+            {
+                if (TrackBar1.Value % 20 != 0)
+                {
+                    TrackBar1.Value = (TrackBar1.Value / 20) * 20;
+                }
+            }
+            ScaleLabel.Text = string.Format($"Масштаб: {TrackBar1.Value}%");
+        }
     }
 }
