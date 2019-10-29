@@ -1,0 +1,11 @@
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\bin\Debug\Lab1.exe.config
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\bin\Debug\Lab1.exe
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\bin\Debug\Lab1.pdb
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.csprojAssemblyReference.cache
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.Form1.resources
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.Properties.Resources.resources
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.csproj.GenerateResource.cache
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.csproj.CoreCompileInputs.cache
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.exe
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.pdb
+D:\Roman\5 semester\Graphical Design\Lab1\Lab1\obj\Debug\Lab1.Fractals.resources
