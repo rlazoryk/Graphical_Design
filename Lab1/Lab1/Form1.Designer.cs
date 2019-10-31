@@ -39,17 +39,17 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(259, 1);
+            this.pictureBox1.Location = new System.Drawing.Point(22, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(383, 368);
+            this.pictureBox1.Size = new System.Drawing.Size(450, 458);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
             // 
             // FractalsBtn
             // 
-            this.FractalsBtn.Location = new System.Drawing.Point(54, 136);
+            this.FractalsBtn.Location = new System.Drawing.Point(546, 60);
             this.FractalsBtn.Name = "FractalsBtn";
-            this.FractalsBtn.Size = new System.Drawing.Size(184, 288);
+            this.FractalsBtn.Size = new System.Drawing.Size(260, 84);
             this.FractalsBtn.TabIndex = 1;
             this.FractalsBtn.Text = "Fractals";
             this.FractalsBtn.UseVisualStyleBackColor = true;
@@ -57,18 +57,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(315, 136);
+            this.button2.Location = new System.Drawing.Point(546, 197);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(184, 288);
+            this.button2.Size = new System.Drawing.Size(260, 82);
             this.button2.TabIndex = 2;
             this.button2.Text = "button2";
             this.button2.UseVisualStyleBackColor = true;
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(576, 136);
+            this.button3.Location = new System.Drawing.Point(546, 336);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(184, 288);
+            this.button3.Size = new System.Drawing.Size(260, 85);
             this.button3.TabIndex = 3;
             this.button3.Text = "button3";
             this.button3.UseVisualStyleBackColor = true;
@@ -77,7 +77,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 489);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.FractalsBtn);
